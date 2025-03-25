@@ -1,15 +1,13 @@
 import ImageCard from "../ImageCard/ImageCard";
-
-export default function ImageGallery({items}) {
+import css from "./ImageGallery.module.css";
+export default function ImageGallery({ items, onClick }) {
   return (
-    <div>
-      <ul>
+      <ul className={css.list}>
         {items.map((item) => (
           <li key={item.id}>
-            <ImageCard item={item} />
+            <ImageCard item={item} onClick={onClick} />
           </li>
         ))}
       </ul>
-    </div>
   );
 }
